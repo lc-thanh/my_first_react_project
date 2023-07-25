@@ -1,0 +1,15 @@
+table {
+    margin-left: 40px;
+}
+
+th, td {
+    padding: 0 10px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+    table {
+        margin-top: 50px;
+        margin-left: 0;
+    }
+}
