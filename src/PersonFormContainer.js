@@ -8,20 +8,11 @@ function PersonFormContainer() {
     const [lastName, setLastName] = useState("");
     const [age, setAge] = useState(null);
     const [address, setAddress] = useState("");
-    const [buttonClickCount, setButtonClickCount] = useState(0);
     const [personData, setPersonData] = useState([]);
 
     useEffect(() => {
-        setPersonData((prev) => ([
-            ...prev,
-            {
-                dataFirstName: firstName,
-                dataLastName: lastName,
-                dataAge: age,
-                dataAddress: address
-            }])
-        )
-    }, [buttonClickCount]);
+
+    }, [personData]);
 
     const changeFirstNameHandler = ({target}) => {
         setFirstName(target.value);
@@ -39,7 +30,15 @@ function PersonFormContainer() {
     };
 
     const clickAddHandler = () => {
-        setButtonClickCount((prevCount) => prevCount + 1)
+        setPersonData((prev) => ([
+            ...prev,
+            {
+                dataFirstName: firstName,
+                dataLastName: lastName,
+                dataAge: age,
+                dataAddress: address
+            }])
+        )
     };
 
 
